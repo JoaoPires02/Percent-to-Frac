@@ -20,6 +20,7 @@ const gcd = (a, b) => a ? gcd(b % a, a) : b;
 const lcm = (a, b) => a * b / gcd(a, b);
 
 function addToPercList(n) {
+    //let num = 1.0 / 128 * Math.ceil(128 * n);
     percList.push(n);
 }
 
