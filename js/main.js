@@ -39,7 +39,7 @@ function getSameDenList() {
     sameDenListStr = [];
     let denList = [];
     for (f of fracList) {
-        denList.push(f.denominator)
+        denList.push(f.denominator);
     }
 
     let mult = denList.reduce(lcm);
@@ -68,16 +68,35 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
     else {
         document.getElementById("alert").innerHTML = '';
     }
+    
+    table = '<table border=1>'
+    table += '<tr>';
+    for (let i = 0; i < percList.length; i++) {
+        table += '<td>' + percList[i] + '</td>';
+    }
+    table += '</tr>';
+    table += '</table>';
+    document.querySelector(".output").innerHTML = table;
 
-    const string = JSON.stringify(percList, null, 4);
-    document.querySelector(".output").innerHTML = string;
-    const string2 = JSON.stringify(sameDenListStr, null, 4);
-    document.querySelector(".output2").innerHTML = string2;
-    const string3 = JSON.stringify(fracListStr, null, 4);
-    document.querySelector(".output3").innerHTML = string3;
+    table = '<table border=1>'
+    table += '<tr>';
+    for (let i = 0; i < percList.length; i++) {
+        table += '<td>' + sameDenListStr[i] + '</td>';
+    }
+    table += '</tr>';
+    table += '</table>';
+    document.querySelector(".output2").innerHTML = table;
+
+    table = '<table border=1>'
+    table += '<tr>';
+    for (let i = 0; i < percList.length; i++) {
+        table += '<td>' + fracListStr[i] + '</td>';
+    }
+    table += '</tr>';
+    table += '</table>';
+    document.querySelector(".output3").innerHTML = table;
 
     document.getElementById('percent').value = '';
-    
 });
 
 function test() {
